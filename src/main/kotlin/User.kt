@@ -1,10 +1,6 @@
 import java.util.*
 
-class User(val name: String, id: String) {
-    val resources = ResourceAccount()
-    val developmentCards = DevelopmentCards()
-
-    fun getVictoryPoints() : Int {
-        return 0
-    }
+class User(val name: String, id: UUID) {
+    val resources = ResourceAccount(id)
+    val developmentCards = DevelopmentCards(id)
 }
