@@ -1,3 +1,5 @@
+package classes
+
 enum class ResourceType {
     ORE,
     SHEEP,

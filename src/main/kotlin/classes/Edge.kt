@@ -1,6 +1,7 @@
 import java.util.*
 
-class Vertex(val coordinates: Pair, id: UUID) {
+/*
+class Edge(val coordinates: Pair, id: UUID) {
 
     val eid: String = id
     val coordinates: Pair = coordinates
@@ -10,4 +11,4 @@ class Vertex(val coordinates: Pair, id: UUID) {
     // might need idk
     val adjVerts = mutableListOf<Vertex>();
 
-}
+}*/

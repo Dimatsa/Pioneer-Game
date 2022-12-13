@@ -1,5 +1,6 @@
 import java.util.*
 
+/*
 class Vertex(val coordinates: Triple, id: UUID) {
     val vid: string = id
 
@@ -10,3 +11,4 @@ class Vertex(val coordinates: Triple, id: UUID) {
     // might need idk
     val adjEdges = mutableListOf<Edge>();
   }
+*/

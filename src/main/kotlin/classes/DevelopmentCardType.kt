@@ -1,3 +1,5 @@
+package classes
+
 enum class DevelopmentCardType {
     VICTORY_POINT,
     KNIGHT,

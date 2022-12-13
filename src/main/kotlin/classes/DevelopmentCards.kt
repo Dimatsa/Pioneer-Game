@@ -1,10 +1,12 @@
+package classes
+
 import java.util.*
 
 class DevelopmentCards(uuid: UUID) {
     private val cards = mutableMapOf<DevelopmentCardType, Int>().withDefault { 0 }
     private val playedCards = mutableMapOf<DevelopmentCardType, Int>().withDefault { 0 }
 
-    fun getCount(cardType: DevelopmentCardType) : Int{
+    fun getCount(cardType: DevelopmentCardType): Int {
         return cards.getValue(cardType)
     }
 

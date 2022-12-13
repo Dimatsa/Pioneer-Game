@@ -1,3 +1,5 @@
+package classes
+
 import java.util.*
 
 class ResourceAccount(id: UUID) {
@@ -15,7 +17,7 @@ class ResourceAccount(id: UUID) {
         cards[type] = oldCount - removeCount
     }
 
-    fun getCount(type: ResourceType) : Int {
+    fun getCount(type: ResourceType): Int {
         return cards.getValue(type)
     }
 }

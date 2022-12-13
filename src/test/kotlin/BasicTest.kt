@@ -1,3 +1,7 @@
+import classes.DevelopmentCardType
+import classes.DevelopmentCards
+import classes.ResourceAccount
+import classes.ResourceType
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
 import java.util.*
