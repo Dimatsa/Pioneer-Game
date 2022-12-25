@@ -7,7 +7,7 @@ import kotlin.test.assertNotEquals
 internal class CoordsTest {
     @Test
     fun hexCellsAdjacentCells() {
-        var currHex = TileCoords(0, 0)
+        var currHex = HexCoords(0, 0)
         currHex = currHex.getAdjacentCell(EdgeDirections.NE)
         assertEquals(Pair(1, -1), Pair(currHex.q, currHex.r))
         currHex = currHex.getAdjacentCell(EdgeDirections.SE)
@@ -98,7 +98,7 @@ internal class CoordsTest {
 
     @Test
     fun edgeGetVertices() {
-        val origin = TileCoords(0, 0)
+        val origin = HexCoords(0, 0)
         // NW
         var actual = EdgeCoords(origin, EdgeDirections.NW).getVertices()
         assertContains(actual, VertexCoords(origin, VertexDirections.N))
@@ -127,7 +127,7 @@ internal class CoordsTest {
 
     @Test
     fun vertexGetEdges() {
-        val origin = TileCoords(0, 0)
+        val origin = HexCoords(0, 0)
         // N
         var actual = VertexCoords(origin, VertexDirections.N).getEdges()
         assertContains(actual, EdgeCoords(origin, EdgeDirections.NW))

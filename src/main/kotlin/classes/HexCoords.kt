@@ -18,22 +18,24 @@ enum class EdgeDirections {
     NW
 }
 
-data class TileCoords(val q: Int, val r: Int) {
+data class HexCoords(val q: Int, val r: Int) {
     /**
-     * Returns the adjacent HexCellCoords in the provided direction.
-     * @return adjacent HexCellCoords
+     * Returns the adjacent HexCoords in the provided direction.
      */
-    fun getAdjacentCell(direction: EdgeDirections): TileCoords {
+    fun getAdjacentCell(direction: EdgeDirections): HexCoords {
         return when (direction) {
-            EdgeDirections.NE -> TileCoords(q + 1, r - 1)
-            EdgeDirections.E -> TileCoords(q + 1, r)
-            EdgeDirections.SE -> TileCoords(q, r + 1)
-            EdgeDirections.SW -> TileCoords(q - 1, r + 1)
-            EdgeDirections.W -> TileCoords(q - 1, r)
-            EdgeDirections.NW -> TileCoords(q, r - 1)
+            EdgeDirections.NE -> HexCoords(q + 1, r - 1)
+            EdgeDirections.E -> HexCoords(q + 1, r)
+            EdgeDirections.SE -> HexCoords(q, r + 1)
+            EdgeDirections.SW -> HexCoords(q - 1, r + 1)
+            EdgeDirections.W -> HexCoords(q - 1, r)
+            EdgeDirections.NW -> HexCoords(q, r - 1)
         }
     }
 
+    /**
+     * Returns all the vertices of the hex.
+     */
     fun getVertices(): Array<VertexCoords> {
         return arrayOf(
             VertexCoords(this, VertexDirections.N),

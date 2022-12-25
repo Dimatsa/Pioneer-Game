@@ -3,7 +3,7 @@ package classes
 import java.util.Objects.hash
 
 class EdgeCoords(val q: Int, val r: Int, val direction: EdgeDirections) {
-    constructor(hexCell: TileCoords, direction: EdgeDirections) : this(hexCell.q, hexCell.r, direction) {}
+    constructor(hexCell: HexCoords, direction: EdgeDirections) : this(hexCell.q, hexCell.r, direction) {}
 
     override fun equals(other: Any?): Boolean {
         if (this === other) {
@@ -66,7 +66,10 @@ class EdgeCoords(val q: Int, val r: Int, val direction: EdgeDirections) {
         }
     }
 
-    fun getHexCoords(): TileCoords {
-        return TileCoords(q, r)
+    /**
+     * Returns the root HexCoords of the edge.
+     */
+    fun getHexCoords(): HexCoords {
+        return HexCoords(q, r)
     }
 }

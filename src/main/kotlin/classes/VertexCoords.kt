@@ -4,7 +4,7 @@ import java.util.*
 
 class VertexCoords(val q: Int, val r: Int, val direction: VertexDirections) {
 
-    constructor(hexCell: TileCoords, direction: VertexDirections) : this(hexCell.q, hexCell.r, direction) {}
+    constructor(hexCell: HexCoords, direction: VertexDirections) : this(hexCell.q, hexCell.r, direction) {}
 
     override fun equals(other: Any?): Boolean {
         if (this === other) {
@@ -24,7 +24,7 @@ class VertexCoords(val q: Int, val r: Int, val direction: VertexDirections) {
     }
 
     /**
-     * Normalizes vertices, so they can be compared with other vertices and used in a hashtable.
+     * Returns the normalized vertices, so they can be compared with other vertices and used in a hashtable.
      */
     private fun normalizedVertex(): VertexCoords {
         // Observe that directions are only expressed using N and NW
@@ -49,6 +49,9 @@ class VertexCoords(val q: Int, val r: Int, val direction: VertexDirections) {
         }
     }
 
+    /**
+     * Returns the edges joined to the vertex.
+     */
     fun getEdges(): List<EdgeCoords> {
         val normalized = this.normalizedVertex()
         return when (normalized.direction) {
@@ -72,7 +75,10 @@ class VertexCoords(val q: Int, val r: Int, val direction: VertexDirections) {
         }
     }
 
-    fun getHexCoords(): TileCoords {
-        return TileCoords(q, r)
+    /**
+     * Returns the HexCoords of the root tile.
+     */
+    fun getHexCoords(): HexCoords {
+        return HexCoords(q, r)
     }
 }
