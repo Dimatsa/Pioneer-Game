@@ -5,5 +5,5 @@ enum class ResourceType {
     SHEEP,
     CLAY,
     WHEAT,
-    WOOD
+    WOOD,
 }
